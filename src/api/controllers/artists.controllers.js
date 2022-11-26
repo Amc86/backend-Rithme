@@ -3,7 +3,7 @@ const Artist = require('../models/artists.models'); //Nos traermos el modelo del
 const getAllArtists = async (request, response) => {
     try {
         
-        const allArtists = await Artist.find().populate('genre concerts'); //Cogemos todas las series de nuestro modelo "Enterprise".
+        const allArtists = await Artist.find().populate('genre concerts halls'); //Cogemos todas las series de nuestro modelo "Enterprise".
         return response.status(200).json(allArtists);
 
     } catch (error) {
@@ -17,7 +17,7 @@ const getArtist = async (request, response) => {
     try {
         
         const {id} = request.params;
-        const allArtists = await Artist.findById(id).populate('genre concerts'); //Cogemos todas las Enterprises de nuestro modelo "Enterprise
+        const allArtists = await Artist.findById(id).populate('genre concerts halls'); //Cogemos todas las Enterprises de nuestro modelo "Enterprise
         return response.status(200).json(allArtists);
 
     } catch (error) {
@@ -31,7 +31,7 @@ const postNewArtist = async (request, response) => {
     try {
         
         const {name, genre, description, image, concerts} = request.body;
-        const newArtist = new Artist({name, genre, description, image, concerts});
+        const newArtist = new Artist({name, genre, description, image, concerts, halls});
         const createdArtist = await newArtist.save();
         return response.status(201).json(createdArtist);
 

@@ -22,7 +22,7 @@ app.use(cors({
 app.use(express.json()); //Necesario para poder usar json a la hora de enviar datos como puede ser con el método POST.
 app.use(express.urlencoded({ extended : false }));
 
-app.use('/', routerArtists, routerConcerts, routerHalls, routerGenres, routerUsers, routerTickets);
+// app.use('/', routerArtists, routerConcerts, routerHalls, routerGenres, routerUsers, routerTickets);
 app.use('/artists', routerArtists);
 app.use('/concerts', routerConcerts);
 app.use('/halls', routerHalls);
