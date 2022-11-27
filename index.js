@@ -8,6 +8,7 @@ const routerGenres = require('./src/api/routes/genres.routes');
 const routerUsers = require('./src/api/routes/users.routes');
 const routerTickets = require('./src/api/routes/tickets.routes');
 const routerMedias = require('./src/api/routes/medias.routes');
+const routerRevistas = require('./src/api/routes/revistas.routes');
 
 
 const cors = require('cors'); //hecho durante tokens (y explicacion de jose)
@@ -36,5 +37,6 @@ app.use('/genres', routerGenres);
 app.use('/users', routerUsers);
 app.use('/tickets', routerTickets);
 app.use('/medias', routerMedias);
+app.use('/revistas', routerRevistas);
  //Para la ruta '/enterprises', utiliza este router(routerEnterprises), que hemos creado en routes/enterprise.routes.js donde hemos creado funciones para los diferentes métodos GET POST PUT DELETE
 app.listen(PORT, () => console.log(`listening on port: http://localhost:${PORT}`));

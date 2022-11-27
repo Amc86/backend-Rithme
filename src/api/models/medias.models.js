@@ -5,7 +5,6 @@ const Schema = mongoose.Schema
 const mediasSchema = new Schema({
 
     nameONDAS : {type : String},
-    nameREVISTA : {type : String},
     image : {type : String, required: true}
 
 },{
