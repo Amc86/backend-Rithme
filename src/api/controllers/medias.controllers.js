@@ -29,8 +29,8 @@ const getMedia = async (request, response) => {
 const postNewMedia = async (request, response) => {
     try {
         
-        const {nameONDAS, nameREVISTA, image} = request.body;
-        const newMedia = new Media({nameONDAS, nameREVISTA, image});
+        const {nameONDAS, image} = request.body;
+        const newMedia = new Media({nameONDAS, image});
         const createdMedia = await newMedia.save();
         return response.status(201).json(createdMedia);
 
