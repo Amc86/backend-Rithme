@@ -7,7 +7,11 @@ const routerHalls = require('./src/api/routes/halls.routes');
 const routerGenres = require('./src/api/routes/genres.routes');
 const routerUsers = require('./src/api/routes/users.routes');
 const routerTickets = require('./src/api/routes/tickets.routes');
-const cors = require('cors');
+const routerMedias = require('./src/api/routes/medias.routes');
+
+
+const cors = require('cors'); //hecho durante tokens (y explicacion de jose)
+const {isAuth} = require('./src/middlewares/auth');
 
 const {connect} = require('./utils/database'); //Importamos la conexión con la BBDD
 
@@ -19,6 +23,8 @@ app.use(cors({
     origin: "*",
     credentials: true
 })) // Use this after the variable declaration
+
+
 app.use(express.json()); //Necesario para poder usar json a la hora de enviar datos como puede ser con el método POST.
 app.use(express.urlencoded({ extended : false }));
 
@@ -28,5 +34,7 @@ app.use('/concerts', routerConcerts);
 app.use('/halls', routerHalls);
 app.use('/genres', routerGenres);
 app.use('/users', routerUsers);
-app.use('/tickets', routerTickets);  //Para la ruta '/enterprises', utiliza este router(routerEnterprises), que hemos creado en routes/enterprise.routes.js donde hemos creado funciones para los diferentes métodos GET POST PUT DELETE
+app.use('/tickets', routerTickets);
+app.use('/medias', routerMedias);
+ //Para la ruta '/enterprises', utiliza este router(routerEnterprises), que hemos creado en routes/enterprise.routes.js donde hemos creado funciones para los diferentes métodos GET POST PUT DELETE
 app.listen(PORT, () => console.log(`listening on port: http://localhost:${PORT}`));
