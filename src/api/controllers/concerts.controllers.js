@@ -17,6 +17,7 @@ const getConcert = async (request, response) => {
         
         const {id} = request.params;
         const allConcerts = await Concert.findById(id).populate('artists halls'); //Cogemos todas las Enterprises de nuestro modelo "Enterprise
+
         return response.status(200).json(allConcerts);
 
     } catch (error) {

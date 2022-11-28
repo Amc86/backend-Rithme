@@ -12,6 +12,7 @@ const routerMedias = require('./src/api/routes/medias.routes')
 
 
 
+
 const {connect} = require('./utils/database'); //Importamos la conexión con la BBDD
 
 connect(); //Conectamos después de iniciar el servidor con la BBDD
