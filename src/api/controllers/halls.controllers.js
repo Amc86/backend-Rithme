@@ -30,7 +30,7 @@ const postNewHall = async (request, response) => {
     try {
         
         const {name, address, image} = request.body;
-        const newHall = new Hall({name, address, image});
+        const newHall = new Hall({name, address, image, mapa});
         const createdHall = await newHall.save();
         return response.status(201).json(createdHall);
 

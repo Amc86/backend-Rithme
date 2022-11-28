@@ -8,8 +8,7 @@ const concertsSchema = new Schema({
     date : {type : String, required: true},
     hour : {type : String, required: true},
     price: {type : String, required: true},
-    halls : {type: Schema.Types.ObjectId, ref : 'halls'}
-
+    halls : {type: Schema.Types.ObjectId, ref : 'halls'},
 
 },{
     timestamps : true
