@@ -11,7 +11,7 @@ const concertsSchema = new Schema({
     halls : {type: Schema.Types.ObjectId, ref : 'halls'}
 
 
-
+borrar esta linea
 },{
     timestamps : true
 })
