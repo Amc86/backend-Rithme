@@ -9,7 +9,7 @@ const artistsSchema = new Schema({
     description: {type : String, required: true},
     image : {type : String, required: true},
     concerts : {type: Schema.Types.ObjectId, ref : 'concerts'},
-    halls : {type: Schema.Types.ObjectId, ref : 'halls'}
+    halls: { type: Schema.Types.ObjectId, ref : 'halls'}
 
 },{
     timestamps : true
