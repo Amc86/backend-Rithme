@@ -4,14 +4,14 @@ const Schema = mongoose.Schema
 
 const concertsSchema = new Schema({
 
-    artist : {type: Schema.Types.ObjectId, ref : 'artists'},
+    artists : {type: Schema.Types.ObjectId, ref : 'artists'},
     date : {type : String, required: true},
     hour : {type : String, required: true},
     price: {type : String, required: true},
     halls : {type: Schema.Types.ObjectId, ref : 'halls'}
 
+    // para borrar
 
-borrar esta linea
 },{
     timestamps : true
 })
