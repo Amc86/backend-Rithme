@@ -1,12 +1,15 @@
 const express = require('express'); 
 const dotenv = require('dotenv'); 
-const PORT = process.env.PORT || 9004;
+const PORT = process.env.PORT || 9007;
 const routerArtists = require('./src/api/routes/artists.routes');
 const routerConcerts = require('./src/api/routes/concerts.routes');
 const routerHalls = require('./src/api/routes/halls.routes');
 const routerGenres = require('./src/api/routes/genres.routes');
 const routerUsers = require('./src/api/routes/users.routes');
-const routerTickets = require('./src/api/routes/tickets.routes')
+const routerTickets = require('./src/api/routes/tickets.routes');
+const routerRevistas = require('./src/api/routes/revistas.routes');
+const routerMedias = require('./src/api/routes/medias.routes')
+
 
 
 const {connect} = require('./utils/database'); //Importamos la conexión con la BBDD
@@ -25,10 +28,13 @@ app.use(cors({
     credentials: true
 })) // Use this after the variable declaration
 
-app.use('/artist', routerArtists);
+app.use('/artists', routerArtists);
 app.use('/concerts', routerConcerts);
 app.use('/halls', routerHalls);
 app.use('/genres', routerGenres);
 app.use('/users', routerUsers);
 app.use('/tickets', routerTickets);  
+app.use('/revistas', routerRevistas);  
+app.use('/medias', routerMedias);  
+
 app.listen(PORT, () => console.log(`listening on port: http://localhost:${PORT}`));
