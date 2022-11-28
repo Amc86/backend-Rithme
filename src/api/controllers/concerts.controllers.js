@@ -3,7 +3,7 @@ const Concert = require('../models/concerts.models'); //Nos traermos el modelo d
 const getAllConcerts = async (request, response) => {
     try {
         
-        const getAllConcerts = await Concert.find().populate('halls'); //Cogemos todas las series de nuestro modelo "Enterprise".
+        const getAllConcerts = await Concert.find().populate('artist halls'); //Cogemos todas las series de nuestro modelo "Enterprise".
         return response.status(200).json(getAllConcerts);
 
     } catch (error) {
@@ -16,7 +16,7 @@ const getConcert = async (request, response) => {
     try {
         
         const {id} = request.params;
-        const allConcerts = await Concert.findById(id).populate('halls'); //Cogemos todas las Enterprises de nuestro modelo "Enterprise
+        const allConcerts = await Concert.findById(id).populate('artist halls'); //Cogemos todas las Enterprises de nuestro modelo "Enterprise
         return response.status(200).json(allConcerts);
 
     } catch (error) {
@@ -30,7 +30,7 @@ const postNewConcert = async (request, response) => {
     try {
         
         const {date, hour, price, halls} = request.body;
-        const newConcert = new Concert({date, hour, price, halls});
+        const newConcert = new Concert({artist, date, hour, price, halls});
         const createdConcert = await newConcert.save();
         return response.status(201).json(createdConcert);
 
