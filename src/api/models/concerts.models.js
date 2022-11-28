@@ -10,7 +10,6 @@ const concertsSchema = new Schema({
     price: {type : String, required: true},
     halls : {type: Schema.Types.ObjectId, ref : 'halls'}
 
-    // para borrar
 
 },{
     timestamps : true
