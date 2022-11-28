@@ -8,7 +8,9 @@ const routerGenres = require('./src/api/routes/genres.routes');
 const routerUsers = require('./src/api/routes/users.routes');
 const routerTickets = require('./src/api/routes/tickets.routes');
 const routerRevistas = require('./src/api/routes/revistas.routes');
-const routerMedias = require('./src/api/routes/medias.routes');
+const routerMedias = require('./src/api/routes/medias.routes')
+
+
 
 
 const {connect} = require('./utils/database'); //Importamos la conexión con la BBDD
@@ -35,4 +37,5 @@ app.use('/users', routerUsers);
 app.use('/tickets', routerTickets);  
 app.use('/revistas', routerRevistas);  
 app.use('/medias', routerMedias);  
+
 app.listen(PORT, () => console.log(`listening on port: http://localhost:${PORT}`));
